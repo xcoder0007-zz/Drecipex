@@ -3,8 +3,8 @@ DrecipesX app by Reactjs as a client side &amp; NodejsWithExpress as Serverside 
 
 # To Install it 
 
-hit npm install Or npm i
+ npm install Or npm i
 
 # To Run it
 
-hit npm run serve  : ) YUP that's all 
+ npm run serve  : ) YUP that's all 
