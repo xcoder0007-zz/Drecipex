@@ -1,5 +1,6 @@
 import React, { Component } from 'react'
 import RecipeItem from './RecipeItem'
+import styles from './css/app.css';
 
 
 class Recipes extends Component {

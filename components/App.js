@@ -47,7 +47,7 @@ render(){
     
     return (
         
-        <div className="App">
+        <div className="{styles.w3-container}">
         
         <h1>This's The main App Component</h1>
         
