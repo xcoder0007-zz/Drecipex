@@ -5,6 +5,6 @@ DrecipesX app by Reactjs as a client side &amp; NodejsWithExpress as Serverside 
 
  npm install Or npm i
 
-# To Run it
+# To run it
 
  npm run serve  : ) YUP that's all 
