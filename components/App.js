@@ -5,6 +5,7 @@ import Recipes from './Recipes'
 class App extends Component {
 
 constructor(){
+        super();
     this.state = {
         recipes: [
             {
@@ -50,7 +51,7 @@ render(){
         
         <h1>This's The main App Component</h1>
         
-        <Posts />
+        <Recipes recipesList={this.state.recipes} />
 
 
 
