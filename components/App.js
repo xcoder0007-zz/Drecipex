@@ -1,5 +1,6 @@
 import React, {Component } from 'react'
 import Recipes from './Recipes'
+import styles from './css/app.css';
 
 
 class App extends Component {
@@ -47,12 +48,11 @@ render(){
     
     return (
         
-        <div className="{styles.w3-container}">
+        <div className={styles.container}>
         
         <h1>This's The main App Component</h1>
         
         <Recipes recipesList={this.state.recipes} />
-
 
 
 
