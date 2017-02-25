@@ -3,8 +3,8 @@
   "version": "1.0.0",
   "description": "DrecipesX webapp",
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1",
-    "serve": "nodemon server/server.js --ignore components"
+    "dev": "nodemon server/server.js --ignore components",
+    "prod": "webpack -p"
   },
   "repository": {
     "type": "git",
