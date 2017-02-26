@@ -1,46 +1,51 @@
-let express = require('express');
-let path = require('path');
-let config = require('../webpack.config.js')
-let webpack = require('webpack')
-let webpackDevMiddleware = require('webpack-dev-middleware')
-let webpackHotMiddleware = require('webpack-hot-middleware')
-let MongoClient = require('mongojs')
-let DBdate = require('./db.js');
-let app = express();
-let compiler = webpack(config)
+ express = require('express');
+ mongoose = require('mongoose')
+ path = require('path');
+ config = require('../webpack.config')
+ webpack = require('webpack')
+ webpackDevMiddleware = require('webpack-dev-middleware')
+ webpackHotMiddleware = require('webpack-hot-middleware')
+ app = express();
+ compiler = webpack(config)
+ router = express.Router();              // get an instance of the express Router
+ dbConfig = require('./db')
+ recipesModule = require('./modules/recipes.module')
 
 
+// Connect to DB 
+mongoose.connect(dbConfig.config)
+
+
+app.use('/', router);
 app.use(webpackDevMiddleware(compiler, { noInfo: true, publicPath: config.output.publicPath }))
 app.use(webpackHotMiddleware(compiler))
 
 
 app.use(express.static('./dist'));
 
-app.use('/', function (req, res) {
+router.get('/', function (req, res) {
   res.sendFile(path.resolve('client/index.html'));
 
 });
 
 
-app.use('/data', function (req, res, next) {
+router.get('/recipes', function (req, res) {
+
+recipesModule.getRecipes(function(err,recipes){
+ 
+ if(err){throw err}
+
+res.json(recipes)
+
+})
 
 
-  // Connect to the db
-  db = MongoClient(DBdate.link);
-
-
-  // find everything 
-  db.collection('recipes').find(function (err, docs) {
-
-    // docs is an array of all the documents in recipes 
-    console.log(docs)
-  })
 
 
 });
 
 
-let port = 3000;
+ port = 3000;
 
 app.listen(port, function (error) {
   if (error) throw error;

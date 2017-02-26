@@ -19,7 +19,7 @@
     "babel-preset-react": "^6.23.0",
     "babel-preset-react-hmre": "^1.1.1",
     "express": "^4.14.1",
-    "mongojs": "^2.4.0",
+    "mongoose": "^4.8.4",
     "react": "^15.4.2",
     "react-dom": "^15.4.2",
     "remove": "^0.1.5",
