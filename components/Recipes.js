@@ -7,8 +7,8 @@ class Recipes extends Component {
 
     render() {
         let recipes
-        if (this.props.recipesList)
-            recipes = this.props.recipesList.map(recipe => { return (<RecipeItem styles={this.props.styles} key={recipe._Id} recipe={recipe} />) })
+        if (this.props.recipes)
+            recipes = this.props.recipes.map(recipe => { return (<RecipeItem styles={this.props.styles} key={recipe.Title} recipe={recipe} />) })
 
         return (
 
